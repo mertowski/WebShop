@@ -71,7 +71,7 @@ die('Login erfolgreich. Weiter zur <a href="index.html">Startseite</a>');
     <div class="container-fluid"
 <div class="row" id="logo">
 
-  <div class="col-lg-12" id="loggo">schuhemarkt<span class='dotcom'>.com</span><span class='logosag'>WEB-PROGRAMMIERUNG</span></div>
+  <div class="col-lg-12" id="loggo">schuheschnäppchen<span class='dotcom'>.com</span><span class='logosag'>Secondhand Schuhe</span></div>
 </div>
 </div>
         <!-- Logo Grid-->   

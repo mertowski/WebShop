@@ -11,7 +11,8 @@ if($cart->total_items() <= 0){
     header("Location: herren.php");
 }
 
-
+// Legen Sie die customer ID in der Sitzung fest
+$_SESSION['sessCustomerID'] = 1;
 
 // gib customer details in der Sitzung
 $query = $db->query("SELECT * FROM customers WHERE id = ".$_SESSION['userid']);
@@ -65,11 +66,11 @@ $custRow = $query->fetch_assoc();
     <!-- top Grid burada bitiyor -->    
 
 
-        <!-- Logo Grid-->   
+<!-- Logo Grid-->   
     <div class="container-fluid"
 <div class="row" id="logo">
 
-  <div class="col-lg-12" id="loggo">schuhemarkt<span class='dotcom'>.com</span><span class='logosag'>WEB-PROGRAMMIERUNG</span></div>
+  <div class="col-lg-12" id="loggo">schuheschnäppchen<span class='dotcom'>.com</span><span class='logosag'>Secondhand Schuhe</span></div>
 </div>
 </div>
         <!-- Logo Grid-->   

@@ -44,11 +44,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=webshop', 'root', '');
     <!-- top Grid burada bitiyor -->    
 
 
-        <!-- Logo Grid-->   
+<!-- Logo Grid-->   
     <div class="container-fluid"
 <div class="row" id="logo">
 
-  <div class="col-lg-12" id="loggo">schuhemarkt<span class='dotcom'>.com</span><span class='logosag'>WEB-PROGRAMMIERUNG</span></div>
+  <div class="col-lg-12" id="loggo">schuheschnäppchen<span class='dotcom'>.com</span><span class='logosag'>Secondhand Schuhe</span></div>
 </div>
 </div>
         <!-- Logo Grid-->   
@@ -149,33 +149,61 @@ if(isset($_GET['register'])) {
  
 if($showFormular) {
 ?>
- 
-<form action="?register=1" method="post">
-
-Vorname:<br>
-<input type="name" size="40" maxlength="250" name="vorname" ><br><br>
-Nachname:<br>
-<input type="name" size="40" maxlength="250" name="nachname"><br><br>
 
 
-E-Mail:<br>
-<input type="email" size="40" maxlength="250" name="email"><br><br>
- 
-Dein Passwort:<br>
-<input type="password" size="40"  maxlength="250" name="passwort"><br>
- 
-Passwort wiederholen:<br>
-<input type="password" size="40" maxlength="250" name="passwort2"><br><br>
 
-Telefonnummer:<br>
-<input type="number" size="40" maxlength="250" name="phone"><br><br>
+<div class="container">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div id="logo" style="color: white; text-align: center;">Registrieren</div>
+      <br>
 
-Adresse:<br>
-<input type="adress" size="40" maxlength="250" name="adresse"><br><br>
- 
-<input type="submit" value="Abschicken">
-</form>
- 
+      <div class="col-xl-12">
+        <form action="?register=1" method="post">
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="vorname" name='vorname' placeholder="Vorname"/>            
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="nachname" name='nachname' placeholder="Nachname"/>            
+          </div>
+
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-inbox"></i></span>
+            <input class="form-control" type="email" name='email' placeholder="E-Mail"/>            
+          </div>
+
+          
+
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name='passwort' placeholder="Password"/>     
+          </div>
+
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name='passwort2' placeholder="Password wiederholen"/>     
+          </div>
+
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="number" name='phone' placeholder="Handynummer"/>     
+          </div>
+
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="adress" name='adresse' placeholder="Adresse"/>     
+          </div>
+          
+
+          <div class="form-group">
+          <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <input type="submit" class="btn-success" value="Abschicken" style="margin-left: -42px;">
+          </div>
+          </div>
+          <br>
+          <br> 
 <?php
 } //Ende von if($showFormular)
 ?>
