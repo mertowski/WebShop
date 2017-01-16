@@ -1,22 +1,23 @@
 <?php
 // Datenbank-Konfigurationsdatei
 include 'dbConfig.php';
-
 // Initialisieren Warenkorb Klasse
 include 'Cart.php';
 $cart = new Cart;
-
 // Umleiten nach Home, wenn der Warenkorb leer ist
 if($cart->total_items() <= 0){
     header("Location: herren.php");
 }
-
 // Legen Sie die customer ID in der Sitzung fest
-$_SESSION['sessCustomerID'] = 1;
-
+$_SESSION['sessCustomerID'] = $_SESSION['userid'];
 // gib customer details in der Sitzung
 $query = $db->query("SELECT * FROM customers WHERE id = ".$_SESSION['userid']);
 $custRow = $query->fetch_assoc();
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +41,6 @@ $custRow = $query->fetch_assoc();
     <script src="js/bootstrap.js"></script> 
     
     <link rel="stylesheet" type="text/css" href="index.css">
-
-
 
 
 
@@ -131,9 +130,9 @@ $custRow = $query->fetch_assoc();
         ?>
         <tr>
             <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
+            <td><?php echo '&euro;'.$item["price"].' Euro'; ?></td>
             <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo '&euro;'.$item["subtotal"].' Euro'; ?></td>
         </tr>
         <?php } }else{ ?>
         <tr><td colspan="4"><p>Keine Artikel im Warenkorb.</p></td>
@@ -143,7 +142,7 @@ $custRow = $query->fetch_assoc();
         <tr>
             <td colspan="3"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Summe <?php echo '$'.$cart->total().' USD'; ?></strong></td>
+            <td class="text-center"><strong>Summe <?php echo '&euro;'.$cart->total().' Euro'; ?></strong></td>
             <?php } ?>
         </tr>
     </tfoot>

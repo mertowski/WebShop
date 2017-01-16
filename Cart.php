@@ -19,11 +19,9 @@ class Cart {
 	public function contents(){
 		// rearrange the newest first
 		$cart = array_reverse($this->cart_contents);
-
 		// Entfernen Sie diese, so dass sie kein Problem beim Anzeigen der Wagentabelle verursachen
 		unset($cart['total_items']);
 		unset($cart['cart_total']);
-
 		return $cart;
 	}
     

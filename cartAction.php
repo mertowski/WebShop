@@ -2,7 +2,6 @@
 // initialize shopping cart class
 include 'Cart.php';
 $cart = new Cart;
-
 // include database configuration file
 include 'dbConfig.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
- 	<title>site adi</title>
+ 	<title>Schuhe Schnäppchen</title>
  	<meta charset="utf-8">
  	 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,14 +83,23 @@
 </nav>
         <!-- NAVBAR-->  
         
-     
- <button type="button" class="damenBtn center-block"><a href="damen.php">Damen</a></button>
 
-<p></p>
+<br>
+<br>
+<?php
 
-<button type="button" class="herrenBtn center-block"><a href="herren.php">Herren</a></button>
+  $mysqli = new mysqli("localhost", "root", "", "webshop");
 
+  $ergebnis = $mysqli->query("SELECT * FROM customers;");
 
+  $anzahlKunde=$ergebnis->num_rows;
+
+  $ergebnis->close();
+
+  $mysqli->close();
+  ?>
+
+<p style="text-align: center; font-size: 20px;">Es gibt <?php echo $anzahlKunde; ?> Kunden online!</p>
 
 </body>
 </html>

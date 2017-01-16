@@ -77,6 +77,7 @@ include 'dbConfig.php';
       <ul class="nav navbar-nav" style="float: right;">
         <li><a href="registrieren.php">Registrieren</a></li>
         <li><a href="login.php">Login</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -103,7 +104,7 @@ include 'dbConfig.php';
                     <p class="list-group-item-text"><?php echo $row["description"]; ?></p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead"><?php echo '$'.$row["price"].' &euro;'; ?></p>
+                            <p class="lead"><?php echo '&euro;'.$row["price"].' Euro'; ?></p>
                         </div>
                         <div class="col-md-6">
                             <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Einkaufswagen</a>

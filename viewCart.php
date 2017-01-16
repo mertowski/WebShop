@@ -97,6 +97,7 @@ $cart = new Cart;
       <ul class="nav navbar-nav" style="float: right;">
         <li><a href="registrieren.php">Registrieren</a></li>
         <li><a href="login.php">Login</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -127,9 +128,9 @@ $cart = new Cart;
         ?>
         <tr>
             <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
+            <td><?php echo '&euro;'.$item["price"].' Euro'; ?></td>
             <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo '&euro;'.$item["subtotal"].' Euro'; ?></td>
             <td>
                 <!--<a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a>-->
                 <a href="cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
@@ -144,7 +145,7 @@ $cart = new Cart;
             <td><a href="#" onclick="history.go(-1)" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Weiter einkaufen</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Summe <?php echo '$'.$cart->total().' USD'; ?></strong></td>
+            <td class="text-center"><strong>Summe <?php echo '&euro;'.$cart->total().' Euro'; ?></strong></td>
             <td><a href="checkout.php" class="btn btn-success btn-block">Zur Kasse gehen<i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
